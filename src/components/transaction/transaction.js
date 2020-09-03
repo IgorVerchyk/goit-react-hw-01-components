@@ -1,19 +1,20 @@
 import React from "react";
-import Styles from "./transaction-styles";
+import Styles from "./transaction-styles.module.css";
 import PropTypes from "prop-types";
 
 export default function TransactionRender({ children }) {
   return (
-    <Styles.Table>
-      <Styles.Thead>
-        <Styles.Tr>
-          <Styles.Th>Type</Styles.Th>
-          <Styles.Th>Amount</Styles.Th>
-          <Styles.Th>Currency</Styles.Th>
-        </Styles.Tr>
-      </Styles.Thead>
-      <Styles.Tbody>{children}</Styles.Tbody>
-    </Styles.Table>
+    <table className={Styles.Table}>
+      <thead className={Styles.Thead}>
+        <tr className={Styles.Tr}>
+          <th className={Styles.Th}>Type</th>
+          <th className={Styles.Th}>Amount</th>
+          <th className={Styles.Th}>Currency</th>
+        </tr>
+      </thead>
+
+      <tbody className={Styles.Tbody}>{children}</tbody>
+    </table>
   );
 }
 

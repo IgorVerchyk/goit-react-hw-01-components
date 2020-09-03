@@ -1,12 +1,12 @@
 import React from "react";
-import Styled from "../transaction/transaction-styles";
+import Styled from "../transaction/transaction-styles.module.css";
 
 export default function transactionListRender({ prop }) {
   return prop.map((item) => (
-    <Styled.Tr key={item.id}>
-      <Styled.Td>{item.type}</Styled.Td>
-      <Styled.Td>{item.amount}</Styled.Td>
-      <Styled.Td>{item.currency}</Styled.Td>
-    </Styled.Tr>
+    <tr key={item.id} className={Styled.Tr}>
+      <td className={Styled.Td}>{item.type}</td>
+      <td className={Styled.Td}>{item.amount}</td>
+      <td className={Styled.Td}>{item.currency}</td>
+    </tr>
   ));
 }

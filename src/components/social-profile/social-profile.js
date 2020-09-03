@@ -17,6 +17,8 @@ export default function SocProfile({ prop, children }) {
 }
 
 SocProfile.propTypes = {
-  prop: PropTypes.node,
+  name: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
