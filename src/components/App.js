@@ -9,7 +9,6 @@ import StatsRender from './servises/stats-markup';
 import Stats from './statistics/statistical';
 import StatsCollectionMarkup from './servises/stat-data-markup';
 import Friends from './friends/friends';
-import FriendsList from './friends/friend-list';
 import TransactionList from './transaction/transaction';
 import TransactionItem from './servises/transaction-list';
 
@@ -30,9 +29,7 @@ export default function App() {
             <Stats title={statTitle}>
                 <StatsCollectionMarkup prop={statistical} />
             </Stats>
-            <Friends>
-                <FriendsList prop={friends} />
-            </Friends>
+            <Friends friends={friends} />
             <TransactionList>
                 <TransactionItem prop={transaction}></TransactionItem>
             </TransactionList>

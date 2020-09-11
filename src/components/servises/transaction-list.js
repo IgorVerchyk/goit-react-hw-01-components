@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Styled from '../transaction/transaction-styles.module.css';
+import TransInfo from '../transaction/transaction-info';
 
 export default function transactionListRender({ prop }) {
-    return prop.map(item => (
-        <tr key={item.id} className={Styled.Tr}>
-            <td className={Styled.Td}>{item.type}</td>
-            <td className={Styled.Td}>{item.amount}</td>
-            <td className={Styled.Td}>{item.currency}</td>
+    return prop.map(transaction => (
+        <tr key={transaction.id} className={Styled.Tr}>
+            <TransInfo transaction={transaction} />
         </tr>
     ));
 }
 
 transactionListRender.propTypes = {
-    type: PropTypes.string,
-    amount: PropTypes.number,
-    currency: PropTypes.string,
+    friends: PropTypes.arrayOf(
+        PropTypes.shape({ id: PropTypes.string.isRequired }),
+    ).isRequired,
 };
